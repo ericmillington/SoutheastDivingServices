@@ -9,13 +9,20 @@ Website for Southeast Diving Services (S.E.D.), underwater problem solvers servi
 
 ## Site
 
-A single static page, so it can be hosted on GitHub Pages with no build step.
+Plain static HTML, so it can be hosted on GitHub Pages with no build step.
 
 ```
-index.html          the homepage (all styles inline)
-images/             photos, logo, and icons
-video/hero-waves.mp4  looping background video for the top banner
+index.html                 homepage
+about-us/                  About Us
+services/                  Services overview, plus one folder per service page
+port-services/             Port Services
+contact-us/                Contact Us
+css/style.css              styles shared by every page
+images/                    photos, logo, and icons
+video/hero-waves.mp4       looping background video for the homepage banner
 ```
+
+Each page lives in its own folder as `index.html`, so URLs look like `/about-us/`. The header and footer are repeated on every page, so a change to the menu, phone number, or address needs to be made in each file.
 
 To publish: **Settings → Pages → Deploy from branch → `main` / root**.
 

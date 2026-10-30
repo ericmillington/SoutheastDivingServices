@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Port Services | Southeast Diving Services</title>
+  <meta name="description" content="Certified port contractor dive teams for ports, terminals, marinas, and waterfront facilities in South Florida.">
+  <link rel="icon" href="../images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header>
+    <nav class="nav wrap" aria-label="Main">
+      <div class="nav-left">
+        <a href="../"><img src="../images/logo.png" alt="North &amp; Southeast Diving logo"></a>
+        <a class="call" href="tel:+19546506931"><span class="label">CALL 24/7</span><span>(954) 650-6931</span></a>
+      </div>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+      <ul class="menu" id="menu">
+        <li><a href="../">Home</a></li>
+        <li><a href="../about-us/">About Us</a></li>
+        <li class="has-sub">
+          <a href="../services/">Services</a>
+          <ul class="submenu">
+            <li><a href="../services/commercial-diving-services/">Commercial Diving Services</a></li>
+            <li><a href="../services/ship-dock-seawall-repair/">Ship, Dock &amp; Seawall Repair</a></li>
+            <li><a href="../services/zinc-replacement-propeller-inspection/">Zinc Replacement &amp; Propeller Inspection</a></li>
+            <li><a href="../services/vessel-loading-hauling-services/">Vessel Loading &amp; Hauling Services</a></li>
+            <li><a href="../services/underwater-boat-yacht-cleaning-professionals/">Underwater Boat &amp; Yacht Cleaning Professionals</a></li>
+            <li><a href="../port-services/" aria-current="page">Port Services</a></li>
+          </ul>
+        </li>
+        <li><a href="../contact-us/">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page">
+    <div class="prose">
+        <h1>Port Services</h1>
+        <p class="tagline">Certified Port Contractor</p>
+        <img class="framed" src="../images/port-contractor.jpg" alt="Dive crew boarding a ship" width="308" height="431">
+        <p>Bowie Balentine serves as our Port Manager. He recruits, trains, and leads our skilled dive teams, providing the motivation and leadership that have been crucial to the success of our port operations and underwater maintenance services.</p>
+        <p>We support a wide range of marine infrastructure projects, including:</p>
+        <ul>
+          <li>Ports and terminals</li>
+          <li>Marinas and waterfront facilities</li>
+          <li>Commercial docks and piers</li>
+          <li>Bulkheads and seawalls</li>
+          <li>Marine construction and repair projects</li>
+        </ul>
+        <p>Our dive teams are trained to work in challenging underwater environments and coordinate with marine contractors, engineers, and project managers.</p>
+        <h2>Related Services</h2>
+        <ul class="more-services">
+          <li><a href="../services/commercial-diving-services/">Commercial Diving Services</a></li>
+          <li><a href="../services/ship-dock-seawall-repair/">Ship, Dock &amp; Seawall Repair</a></li>
+          <li><a href="../services/zinc-replacement-propeller-inspection/">Zinc Replacement &amp; Propeller Inspection</a></li>
+          <li><a href="../services/vessel-loading-hauling-services/">Vessel Loading &amp; Hauling Services</a></li>
+          <li><a href="../services/underwater-boat-yacht-cleaning-professionals/">Underwater Boat &amp; Yacht Cleaning Professionals</a></li>
+        </ul>
+        <div class="cta-box">
+          <p>We dive.<br>That’s what we do.</p>
+          <a href="tel:+19546506931">📞 Call (954) 650-6931</a>
+        </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <div>
+          <a class="call" href="tel:+19546506931">CALL 24/7 (954) 650-6931</a>
+          <address>2601 SW 31st St.<br>Unit #301<br>Fort Lauderdale, FL 33312</address>
+          <p class="hours">Mon - Fri, 9am - 3pm</p>
+          <ul class="menu">
+            <li><a href="../">Home</a></li>
+            <li><a href="../about-us/">About Us</a></li>
+            <li><a class="current" href="../services/">Services</a></li>
+            <li><a href="../contact-us/">Contact Us</a></li>
+          </ul>
+        </div>
+        <img src="../images/logo.png" alt="North &amp; Southeast Diving logo" loading="lazy">
+      </div>
+      <p class="copy">&copy; <span id="year">2026</span> Southeast Diving Services</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.getElementById('menu');
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    menu.addEventListener('click', e => {
+      if (e.target.tagName === 'A') { menu.classList.remove('open'); toggle.setAttribute('aria-expanded', false); }
+    });
+  </script>
+</body>
+</html>

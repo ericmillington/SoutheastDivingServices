@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Services | Southeast Diving Services</title>
+  <meta name="description" content="Commercial dive services for boats, marinas, and marine infrastructure across Miami-Dade, Broward, and the Palm Beaches.">
+  <link rel="icon" href="../images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header>
+    <nav class="nav wrap" aria-label="Main">
+      <div class="nav-left">
+        <a href="../"><img src="../images/logo.png" alt="North &amp; Southeast Diving logo"></a>
+        <a class="call" href="tel:+19546506931"><span class="label">CALL 24/7</span><span>(954) 650-6931</span></a>
+      </div>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+      <ul class="menu" id="menu">
+        <li><a href="../">Home</a></li>
+        <li><a href="../about-us/">About Us</a></li>
+        <li class="has-sub">
+          <a href="../services/" aria-current="page">Services</a>
+          <ul class="submenu">
+            <li><a href="../services/commercial-diving-services/">Commercial Diving Services</a></li>
+            <li><a href="../services/ship-dock-seawall-repair/">Ship, Dock &amp; Seawall Repair</a></li>
+            <li><a href="../services/zinc-replacement-propeller-inspection/">Zinc Replacement &amp; Propeller Inspection</a></li>
+            <li><a href="../services/vessel-loading-hauling-services/">Vessel Loading &amp; Hauling Services</a></li>
+            <li><a href="../services/underwater-boat-yacht-cleaning-professionals/">Underwater Boat &amp; Yacht Cleaning Professionals</a></li>
+            <li><a href="../port-services/">Port Services</a></li>
+          </ul>
+        </li>
+        <li><a href="../contact-us/">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page">
+    <div class="prose">
+        <h1>Services</h1>
+        <p class="tagline">Professional Dive Services for Boats, Marinas &amp; Marine Infrastructure</p>
+        <p>At North &amp; Southeast Diving, we provide full-service commercial dive support for boat owners, marinas, contractors, and municipalities across South Florida. From routine underwater maintenance to complex marine construction and repair, our professional dive teams handle the work that happens below the surface—safely, efficiently, and without shortcuts.</p>
+        <div class="cards">
+          <div class="card" style="background-image:url('../images/hard-hat-diving.jpg')">
+            <h3>Hard Hat Diving</h3>
+            <a class="btn" href="../services/commercial-diving-services/">Learn More</a>
+          </div>
+          <div class="card" style="background-image:url('../images/port-services.jpg')">
+            <h3>Port Services</h3>
+            <a class="btn" href="../port-services/">Learn More</a>
+          </div>
+          <div class="card" style="background-image:url('../images/vessel-maintenance.jpg')">
+            <h3>Underwater Vessel Maintenance</h3>
+            <a class="btn" href="../services/underwater-boat-yacht-cleaning-professionals/">Learn More</a>
+          </div>
+          <div class="card" style="background-image:url('../images/hauling-lifting.jpg')">
+            <h3>Hauling &amp; Lifting Services</h3>
+            <a class="btn" href="../services/vessel-loading-hauling-services/">Learn More</a>
+          </div>
+        </div>
+        <h2>All Services</h2>
+        <ul class="more-services">
+          <li><a href="../services/commercial-diving-services/">Commercial Diving Services</a></li>
+          <li><a href="../services/ship-dock-seawall-repair/">Ship, Dock &amp; Seawall Repair</a></li>
+          <li><a href="../services/zinc-replacement-propeller-inspection/">Zinc Replacement &amp; Propeller Inspection</a></li>
+          <li><a href="../services/vessel-loading-hauling-services/">Vessel Loading &amp; Hauling Services</a></li>
+          <li><a href="../services/underwater-boat-yacht-cleaning-professionals/">Underwater Boat &amp; Yacht Cleaning Professionals</a></li>
+          <li><a href="../port-services/">Port Services</a></li>
+        </ul>
+        <div class="cta-box">
+          <p>We dive.<br>That’s what we do.</p>
+          <a href="tel:+19546506931">📞 Call (954) 650-6931</a>
+        </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <div>
+          <a class="call" href="tel:+19546506931">CALL 24/7 (954) 650-6931</a>
+          <address>2601 SW 31st St.<br>Unit #301<br>Fort Lauderdale, FL 33312</address>
+          <p class="hours">Mon - Fri, 9am - 3pm</p>
+          <ul class="menu">
+            <li><a href="../">Home</a></li>
+            <li><a href="../about-us/">About Us</a></li>
+            <li><a class="current" href="../services/">Services</a></li>
+            <li><a href="../contact-us/">Contact Us</a></li>
+          </ul>
+        </div>
+        <img src="../images/logo.png" alt="North &amp; Southeast Diving logo" loading="lazy">
+      </div>
+      <p class="copy">&copy; <span id="year">2026</span> Southeast Diving Services</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.getElementById('menu');
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    menu.addEventListener('click', e => {
+      if (e.target.tagName === 'A') { menu.classList.remove('open'); toggle.setAttribute('aria-expanded', false); }
+    });
+  </script>
+</body>
+</html>
