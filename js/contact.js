@@ -4,7 +4,7 @@
 // endpoint, e.g. https://formspree.io/f/xyzabcde -> 'xyzabcde'). Messages are then
 // delivered straight to your inbox. Left empty, sending falls back to opening the
 // visitor's email app with the message pre-filled.
-const FORMSPREE_ID = '';
+const FORMSPREE_ID = 'mbggayer';
 
 document.querySelectorAll('form[data-contact]').forEach(form => {
   const TO = 'southeastdiving@gmail.com';
