@@ -24,19 +24,34 @@ h1, h2, h3 { margin: 0; line-height: 1.1; }
 .stripe { border-top: var(--stripe) solid var(--yellow); }
 
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px 12px 24px;
+  border: 0;
+  border-radius: 999px;
   background: var(--yellow);
   color: var(--black);
-  font-weight: 900;
-  font-size: 1.05rem;
-  padding: 8px 20px;
+  font: 800 1rem/1.2 "Poppins", sans-serif;
+  letter-spacing: .01em;
   text-decoration: none;
-  border: 0;
   cursor: pointer;
-  font-family: inherit;
-  transition: transform .15s, box-shadow .15s;
+  box-shadow: 0 6px 18px rgba(0,0,0,.28), inset 0 -2px 0 rgba(0,0,0,.12);
+  transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
 }
-.btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,.35); }
+.btn::after {
+  content: "";
+  width: 16px; height: 16px;
+  flex: none;
+  background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center/contain no-repeat;
+  transition: transform .2s ease;
+}
+.btn:hover { background-color: #fff440; transform: translateY(-2px); box-shadow: 0 12px 26px rgba(0,0,0,.35), 0 0 0 4px rgba(253,241,0,.2), inset 0 -2px 0 rgba(0,0,0,.12); }
+.btn:hover::after { transform: translateX(4px); }
+.btn:active { transform: translateY(0); box-shadow: 0 4px 12px rgba(0,0,0,.3), inset 0 2px 0 rgba(0,0,0,.12); }
+.btn:focus-visible { outline: 3px solid var(--white); outline-offset: 3px; }
 
 /* Header */
 header { position: sticky; top: 0; z-index: 20; background: var(--yellow); color: var(--black); }
@@ -98,13 +113,14 @@ header { position: sticky; top: 0; z-index: 20; background: var(--yellow); color
 .card::before { content: ""; position: absolute; inset: 0; background: rgba(10,30,60,.35); transition: background .2s; }
 .card:hover { background-size: auto 112%; }
 .card:hover::before { background: rgba(10,30,60,.12); }
-.card .btn { transition: transform .25s ease, box-shadow .25s ease; }
-.card:hover .btn { transform: translateY(-4px); box-shadow: 0 8px 18px rgba(0,0,0,.4); }
+.card:hover .btn { background-color: #fff440; transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,.45), 0 0 0 4px rgba(253,241,0,.22), inset 0 -2px 0 rgba(0,0,0,.12); }
+.card:hover .btn::after { transform: translateX(4px); }
 .card h3 { transition: transform .25s ease; }
 .card:hover h3 { transform: translateY(-4px); }
 .card h3, .card .btn { position: relative; }
 .card h3 { font-size: 1.25rem; font-weight: 900; text-shadow: 0 2px 8px rgba(0,0,0,.6); }
-.card .btn { font-size: .85rem; padding: 8px 20px; }
+.card .btn { gap: 8px; padding: 9px 16px 9px 20px; font-size: .88rem; }
+.card .btn::after { width: 14px; height: 14px; }
 
 /* Diver band */
 .band { height: clamp(260px, 38vw, 440px); background: url("../images/diver-band.jpg") center/cover; }
