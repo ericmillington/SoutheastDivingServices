@@ -207,6 +207,15 @@ header { position: sticky; top: 0; z-index: 20; background: var(--yellow); color
 .cc-edit { background: none; border: 1px solid var(--line); color: var(--white); font: 600 .9rem "Poppins", sans-serif; padding: 9px 18px; border-radius: 999px; cursor: pointer; }
 .cc-edit:hover { border-color: var(--yellow); color: var(--yellow); }
 .contact-card.sent .cc-form-body { display: none; }
+.cc-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.cc-error { margin: 0 0 14px !important; padding: 10px 14px; border-radius: 10px; background: rgba(255,122,107,.12); border: 1px solid rgba(255,122,107,.5); color: #ffd2cc; font-size: .9rem; }
+.cc-error a { color: var(--yellow) !important; font-weight: 700; }
+.cc-submit:disabled { cursor: wait; opacity: .85; transform: none; }
+.cc-submit.sending { font-size: 0; }
+.cc-submit.sending svg { display: none; }
+.cc-submit.sending::before { content: ""; width: 18px; height: 18px; border: 3px solid rgba(0,0,0,.25); border-top-color: #000; border-radius: 50%; animation: spin .7s linear infinite; }
+.cc-submit.sending::after { content: "Sending…"; font-size: 1rem; }
+@keyframes spin { to { transform: rotate(360deg); } }
 @keyframes pop { from { transform: scale(0); } to { transform: scale(1); } }
 
 /* Mega Shippers */

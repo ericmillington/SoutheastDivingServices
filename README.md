@@ -30,4 +30,4 @@ To publish: **Settings → Pages → Deploy from branch → `main` / root**.
 
 - Replace an image by uploading a new file with the same name into `images/`.
 - Keep photos under ~300 KB (about 1600px wide) so the page stays fast.
-- The contact form opens the visitor's email app, because GitHub Pages can't process forms. To receive submissions directly, point the form's `action` at a service like Formspree.
+- The contact form (`js/contact.js`) sends through [Formspree](https://formspree.io) once `FORMSPREE_ID` at the top of that file is filled in. While it's empty, the form opens the visitor's email app with the message pre-filled instead, because GitHub Pages can't process forms on its own.
