@@ -31,12 +31,12 @@
     ring.style.cssText = `left:${x}px;top:${y}px`;
     layer.appendChild(ring);
     const w = innerWidth, h = innerHeight;
-    for (let i = 0; i < 64; i++) {
+    for (let i = 0; i < 36; i++) {
       // Most bubbles cluster around the arrow; the rest rise from across the bottom edge.
-      const nearArrow = i < 28;
-      const bx = nearArrow ? x + (Math.random() - .5) * 220 : Math.random() * w;
+      const nearArrow = i < 14;
+      const bx = nearArrow ? x + (Math.random() - .5) * 160 : Math.random() * w;
       const by = nearArrow ? y + Math.random() * 30 : h + Math.random() * 60;
-      const size = 10 + Math.random() * 30;
+      const size = 5 + Math.random() * 14;
       const b = document.createElement('span');
       b.style.cssText = [
         `--x:${bx.toFixed(0)}px`,
