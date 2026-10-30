@@ -27,21 +27,29 @@
     const layer = document.createElement('div');
     layer.className = 'bubble-burst';
     layer.setAttribute('aria-hidden', 'true');
-    for (let i = 0; i < 34; i++) {
+    const ring = document.createElement('i');
+    ring.style.cssText = `left:${x}px;top:${y}px`;
+    layer.appendChild(ring);
+    const w = innerWidth, h = innerHeight;
+    for (let i = 0; i < 64; i++) {
+      // Most bubbles cluster around the arrow; the rest rise from across the bottom edge.
+      const nearArrow = i < 28;
+      const bx = nearArrow ? x + (Math.random() - .5) * 220 : Math.random() * w;
+      const by = nearArrow ? y + Math.random() * 30 : h + Math.random() * 60;
+      const size = 10 + Math.random() * 30;
       const b = document.createElement('span');
-      const size = 6 + Math.random() * 22;
       b.style.cssText = [
-        `--x:${x + (Math.random() - .5) * 160}px`,
-        `--y:${y + Math.random() * 40}px`,
+        `--x:${bx.toFixed(0)}px`,
+        `--y:${by.toFixed(0)}px`,
         `--s:${size.toFixed(1)}px`,
-        `--dx:${((Math.random() - .5) * 46).toFixed(1)}vw`,
-        `--d:${(1.1 + Math.random() * 1.1).toFixed(2)}s`,
-        `--w:${(Math.random() * .35).toFixed(2)}s`,
+        `--dx:${((Math.random() - .5) * 18).toFixed(1)}vw`,
+        `--d:${(1.8 + Math.random() * 1.4).toFixed(2)}s`,
+        `--w:${(nearArrow ? Math.random() * .25 : .1 + Math.random() * .6).toFixed(2)}s`,
       ].join(';');
       layer.appendChild(b);
     }
     document.body.appendChild(layer);
-    setTimeout(() => layer.remove(), 2800);
+    setTimeout(() => layer.remove(), 4200);
   };
 
   cue?.addEventListener('click', e => {
@@ -59,7 +67,7 @@
       void cue.offsetWidth;
       cue.classList.add('pressed');
       bubbleBurst(r.left + r.width / 2, r.top + r.height / 2);
-      setTimeout(() => glideTo(target, 1300), 120);
+      setTimeout(() => glideTo(target, 1500), 280);
     }
     welcome.focus({ preventScroll: true });
   });
