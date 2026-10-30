@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
@@ -48,12 +49,15 @@
         <img src="images/logo.png" alt="North &amp; Southeast Diving">
         <h1>Underwater Problem Solvers</h1>
       </div>
+      <a class="scroll-cue" href="#welcome" aria-label="Scroll to learn more">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </a>
     </section>
 
-    <section class="welcome stripe">
+    <section class="welcome stripe" id="welcome">
       <div class="wrap">
         <div class="welcome-grid">
-          <div>
+          <div data-reveal>
             <h2>Welcome to Southeast Diving Services: S.E.D.</h2>
             <p>We provide top notch, personalized dive services at competitive rates.</p>
             <p>If you are located in Dade, Broward or the Palm Beaches and are looking for superior underwater vessel maintenance, you couldn’t have come to a better place!</p>
@@ -62,23 +66,30 @@
             <p>No other Dive Company comes close to the advantages you receive with S.E.D. (Southeast Diving).</p>
             <div class="cta"><a class="btn" href="#contact">Work with Southeast Diving</a></div>
           </div>
-          <img src="images/helmet.webp" alt="Yellow commercial diving helmet" width="700" height="770">
+          <img src="images/helmet.webp" alt="Yellow commercial diving helmet" width="700" height="770" data-reveal="right">
+        </div>
+
+        <div class="stats" data-reveal>
+          <div class="stat"><b><span data-count="30">30</span>+</b><span>Years of experience</span></div>
+          <div class="stat"><b><span data-count="24">24</span>/7</b><span>Divers on call</span></div>
+          <div class="stat"><b><span data-count="365">365</span></b><span>Days a year</span></div>
+          <div class="stat"><b><span data-count="3">3</span></b><span>Counties served</span></div>
         </div>
 
         <div class="cards" id="services">
-          <div class="card" style="background-image:url('images/hard-hat-diving.jpg')">
+          <div class="card" data-reveal style="--i:0;background-image:url('images/hard-hat-diving.jpg')">
             <h3>Hard Hat Diving</h3>
             <a class="btn" href="services/commercial-diving-services/">Learn More</a>
           </div>
-          <div class="card" style="background-image:url('images/port-services.jpg')">
+          <div class="card" data-reveal style="--i:1;background-image:url('images/port-services.jpg')">
             <h3>Port Services</h3>
             <a class="btn" href="port-services/">Learn More</a>
           </div>
-          <div class="card" style="background-image:url('images/vessel-maintenance.jpg')">
+          <div class="card" data-reveal style="--i:2;background-image:url('images/vessel-maintenance.jpg')">
             <h3>Underwater Vessel Maintenance</h3>
             <a class="btn" href="services/underwater-boat-yacht-cleaning-professionals/">Learn More</a>
           </div>
-          <div class="card" style="background-image:url('images/hauling-lifting.jpg')">
+          <div class="card" data-reveal style="--i:3;background-image:url('images/hauling-lifting.jpg')">
             <h3>Hauling &amp; Lifting Services</h3>
             <a class="btn" href="services/vessel-loading-hauling-services/">Learn More</a>
           </div>
@@ -90,19 +101,19 @@
 
     <section class="badges stripe">
       <div class="wrap badge-grid">
-        <div class="badge">
+        <div class="badge" data-reveal style="--i:0">
           <img class="photo" src="images/port-contractor.jpg" alt="Dive crew boarding a ship" loading="lazy">
-          <img class="check" src="images/check.svg" alt="">
+          <svg class="check" viewBox="0 0 136 136" aria-hidden="true"><circle cx="68" cy="68" r="68"/><path d="M38 70 60 92 100 46"/></svg>
           <h3>Certified Port Contractor</h3>
         </div>
-        <div class="badge">
+        <div class="badge" data-reveal style="--i:1">
           <img class="photo" src="images/team.jpg" alt="Southeast Diving crew at the port" loading="lazy">
-          <img class="check" src="images/check.svg" alt="">
+          <svg class="check" viewBox="0 0 136 136" aria-hidden="true"><circle cx="68" cy="68" r="68"/><path d="M38 70 60 92 100 46"/></svg>
           <h3>Honest, Reliable, Affordable</h3>
         </div>
-        <div class="badge">
+        <div class="badge" data-reveal style="--i:2">
           <img class="photo" src="images/truck.jpg" alt="Southeast Diving truck" loading="lazy">
-          <img class="check" src="images/check.svg" alt="">
+          <svg class="check" viewBox="0 0 136 136" aria-hidden="true"><circle cx="68" cy="68" r="68"/><path d="M38 70 60 92 100 46"/></svg>
           <h3>Licensed and Insured</h3>
         </div>
       </div>
@@ -110,7 +121,7 @@
 
     <section class="contact" id="contact">
       <div class="wrap contact-grid">
-        <div>
+        <div data-reveal>
           <h2>Get Started with Southeast Diving Services</h2>
           <p>Day or night. Dockside or offshore. Our commercial dive team is available 24/7/365 for underwater boat cleaning, hull maintenance, propeller inspections, zinc replacement, and emergency dive services throughout <strong>Miami-Dade</strong>, <strong>Broward</strong> County, and the <strong>Palm Beaches</strong>.</p>
           <p class="anytime">CALL US ANYTIME, 24/7</p>
@@ -166,7 +177,7 @@
 
     <section class="mega stripe">
       <div class="wrap">
-        <div class="mega-box">
+        <div class="mega-box" data-reveal>
           <img src="images/discovery.png" alt="Discovery Channel">
           <p>Check out Southeast Diving on Mega Shippers!</p>
           <!-- TODO: link to the Mega Shippers episode -->
@@ -177,8 +188,8 @@
 
     <section class="team" id="team">
       <div class="wrap team-grid">
-        <img src="images/trident.png" alt="" loading="lazy">
-        <div>
+        <img src="images/trident.png" alt="" loading="lazy" data-reveal="up-far">
+        <div data-reveal>
           <h2>Meet Our Team</h2>
           <p>Serving boat and yacht owners in Florida’s Tri-county area which includes Dade County, Broward County and the Palm Beaches, there’s no need to look anywhere else to get underwater boat cleaning and maintenance services that deliver superior results.</p>
           <p>If you’d like to learn more about how we can help with your vessel’s monthly underwater cleaning, zinc changes, propeller replacement, or other maintenance services, please contact us:</p>
@@ -222,6 +233,11 @@
     menu.addEventListener('click', e => {
       if (e.target.tagName === 'A') { menu.classList.remove('open'); toggle.setAttribute('aria-expanded', false); }
     });
+    const header = document.querySelector('header');
+    const onScroll = () => header.classList.toggle('scrolled', scrollY > 40);
+    addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
   </script>
+  <script src="js/home.js" defer></script>
 </body>
 </html>
