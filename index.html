@@ -116,26 +116,49 @@
           <p class="anytime">CALL US ANYTIME, 24/7</p>
           <a class="big-phone" href="tel:+19546506931">(954) 650-6931</a>
         </div>
-        <!-- GitHub Pages can't process forms, so this opens the visitor's email app.
-             Swap the action for a form service (Formspree, Netlify Forms, etc.) to receive submissions directly. -->
-        <form action="mailto:southeastdiving@gmail.com" method="post" enctype="text/plain">
-          <div class="field">
-            <label>Name *</label>
-            <div class="row">
-              <div><input name="first" required autocomplete="given-name" aria-label="First name"><small>First</small></div>
-              <div><input name="last" required autocomplete="family-name" aria-label="Last name"><small>Last</small></div>
+        <form class="contact-card" action="mailto:southeastdiving@gmail.com" method="post" enctype="text/plain" data-contact>
+          <div class="cc-form-body">
+            <div class="cc-head">
+              <span class="cc-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+              <div>
+                <h3>Send us a message</h3>
+                <p>Tell us about your vessel or project.</p>
+              </div>
+            </div>
+            <fieldset class="cc-chips">
+              <legend>What do you need?</legend>
+              <div class="chip-list">
+              <label class="chip"><input type="checkbox" name="service" value="Hull cleaning"><span>Hull cleaning</span></label>
+              <label class="chip"><input type="checkbox" name="service" value="Zincs & props"><span>Zincs &amp; props</span></label>
+              <label class="chip"><input type="checkbox" name="service" value="Inspection"><span>Inspection</span></label>
+              <label class="chip"><input type="checkbox" name="service" value="Dock / seawall repair"><span>Dock / seawall repair</span></label>
+              <label class="chip"><input type="checkbox" name="service" value="Hauling & lifting"><span>Hauling &amp; lifting</span></label>
+              <label class="chip"><input type="checkbox" name="service" value="Commercial / port"><span>Commercial / port</span></label>
+              <label class="chip"><input type="checkbox" name="service" value="Emergency"><span>Emergency</span></label>
+              </div>
+            </fieldset>
+            <div class="cc-row">
+              <div class="fl"><input id="cf-first" name="first" required autocomplete="given-name" placeholder=" "><label for="cf-first">First name</label><p class="err"></p></div>
+              <div class="fl"><input id="cf-last" name="last" required autocomplete="family-name" placeholder=" "><label for="cf-last">Last name</label><p class="err"></p></div>
+            </div>
+            <div class="cc-row">
+              <div class="fl"><input id="cf-email" name="email" type="email" required autocomplete="email" placeholder=" "><label for="cf-email">Email</label><p class="err"></p></div>
+              <div class="fl"><input id="cf-phone" name="phone" type="tel" autocomplete="tel" placeholder=" "><label for="cf-phone">Phone <i>(optional)</i></label><p class="err"></p></div>
+            </div>
+            <div class="fl"><textarea id="cf-message" name="message" required maxlength="1000" placeholder=" "></textarea><label for="cf-message">How can we help?</label><span class="count" aria-hidden="true"></span><p class="err"></p></div>
+            <div class="cc-foot">
+              <button type="submit" class="cc-submit">Send message <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+              <p class="cc-alt">Need a diver now? <a href="tel:+19546506931">Call (954) 650-6931</a></p>
             </div>
           </div>
-          <div class="field">
-            <label for="email">Email *</label>
-            <input id="email" name="email" type="email" required autocomplete="email">
+          <div class="cc-success" role="status" hidden>
+            <span class="tick" tabindex="-1"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></span>
+            <h3>Almost there!</h3>
+            <p>Your email app should open with your message ready to go. Just hit send.<br>Didn’t open? Email <a href="mailto:southeastdiving@gmail.com">southeastdiving@gmail.com</a> or call <a href="tel:+19546506931">(954) 650-6931</a>.</p>
+            <button type="button" class="cc-edit">Edit message</button>
           </div>
-          <div class="field">
-            <label for="message">Message *</label>
-            <textarea id="message" name="message" required></textarea>
-          </div>
-          <button type="submit">Submit</button>
         </form>
+        <script src="js/contact.js" defer></script>
       </div>
     </section>
 
