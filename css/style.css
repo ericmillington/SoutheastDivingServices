@@ -244,21 +244,46 @@ header { position: sticky; top: 0; z-index: 20; background: var(--yellow); color
 .team .cta { text-align: center; }
 
 /* Footer */
-footer { background: linear-gradient(180deg, #000 0%, rgba(0,0,0,0) 30%), url("../images/ocean-bottom.jpg") center/cover; padding: 30px 0 50px; }
-.foot { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; align-items: center; }
-.foot .call { display: flex; color: var(--white); margin-bottom: 18px; }
-.foot .call .label { font-size: .95rem; font-weight: 400; letter-spacing: .16em; opacity: .85; margin-bottom: 2px; }
-.foot .call .num { font-size: 1.9rem; }
-.foot address, .foot .hours { font-style: normal; color: var(--yellow); margin: 0 0 20px; line-height: 1.5; }
-.foot .menu a { color: var(--white); font-size: .78rem; }
-.foot .menu a.current { color: var(--yellow); }
-.foot .menu { gap: 12px; }
-.foot > img { width: 126px; }
-.copy { text-align: center; color: #9ab; font-size: .8rem; margin-top: 30px; }
+/* Footer: same ocean palette and type as the "We dive" band */
+.site-footer {
+  position: relative;
+  padding: 64px 0 28px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  background:
+    radial-gradient(ellipse 50% 80% at 0% 0%, rgba(31,140,160,.22), transparent 70%),
+    linear-gradient(180deg, rgba(2,16,21,.92), rgba(2,12,16,.97)),
+    url("../images/ocean-bottom.jpg") center/cover;
+  color: #cfe5ea;
+}
+.foot { display: grid; grid-template-columns: 1.15fr 1.1fr 1.1fr .8fr; gap: 40px; align-items: start; }
+.site-footer .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 14px; font-size: .74rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #8fb9c2; }
+.foot-brand img { width: 88px; height: 88px; margin-bottom: 14px; }
+.foot-name { margin: 0; font-size: 1.15rem; font-weight: 800; color: var(--white); }
+.foot-tag { margin: 2px 0 10px; font-weight: 700; color: var(--yellow); }
+.foot-area { margin: 0; font-size: .88rem; color: #8fb9c2; }
+.foot-phone { display: block; font-size: clamp(1.6rem, 2.4vw, 2rem); font-weight: 900; line-height: 1.1; color: var(--white); text-decoration: none; white-space: nowrap; letter-spacing: -.01em; transition: color .2s; }
+.foot-phone:hover { color: var(--yellow); }
+.foot-email { display: inline-block; margin-top: 10px; color: #cfe5ea; font-weight: 500; text-decoration: none; border-bottom: 1px solid rgba(253,241,0,.5); transition: color .2s, border-color .2s; }
+.foot-email:hover { color: var(--yellow); border-color: var(--yellow); }
+.site-footer address { font-style: normal; line-height: 1.6; margin: 0 0 12px; }
+.foot-hours { margin: 0; font-weight: 600; color: var(--white); }
+.foot-menu { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.foot-menu a { position: relative; display: inline-block; color: #cfe5ea; font-weight: 600; text-decoration: none; transition: color .2s, transform .2s; }
+.foot-menu a::before { content: "→"; position: absolute; left: -18px; opacity: 0; color: var(--yellow); transition: opacity .2s, left .2s; }
+.foot-menu a:hover { color: var(--yellow); transform: translateX(16px); }
+.foot-menu a:hover::before { opacity: 1; }
+.foot-menu a.current { color: var(--yellow); }
+.foot-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; margin-top: 48px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.1); font-size: .85rem; color: #7fa3ab; }
+.foot-bottom p { margin: 0; }
+.to-top { color: #cfe5ea; font-weight: 600; text-decoration: none; }
+.to-top span { display: inline-block; transition: transform .2s; }
+.to-top:hover { color: var(--yellow); }
+.to-top:hover span { transform: translateY(-3px); }
 
 @media (prefers-reduced-motion: reduce) { .hero video { display: none; } }
 
 @media (max-width: 1000px) {
+  .foot { grid-template-columns: 1fr 1fr; }
   .cards { grid-template-columns: repeat(2, 1fr); }
   .welcome-grid { grid-template-columns: 1fr; }
   .helmet-wrap { max-width: 240px; margin: 0 auto; }
@@ -271,11 +296,13 @@ footer { background: linear-gradient(180deg, #000 0%, rgba(0,0,0,0) 30%), url(".
   .nav-left img { width: 48px; height: 48px; }
   .call .num { font-size: .95rem; }
   header .call .label { font-size: .6rem; }
-  .cards, .badge-grid, .contact-grid, .team-grid, .foot { grid-template-columns: 1fr; }
+  .cards, .badge-grid, .contact-grid, .team-grid { grid-template-columns: 1fr; }
+  .foot { grid-template-columns: 1fr 1fr; gap: 32px 20px; }
+  .foot-brand, .foot > div:nth-child(2) { grid-column: 1 / -1; }
+  .foot-bottom { justify-content: center; text-align: center; }
   .badges { padding-bottom: 50px; }
   .team-grid > img { width: 90px; }
-  .foot > div { min-width: 0; }
-  .foot .call .num { font-size: 1.6rem; }
+  .foot > * { min-width: 0; }
   .mega { background-position: 65% top; }
   .cc-row { grid-template-columns: 1fr; gap: 0; }
   .contact-card { padding: 24px 18px 20px; }
@@ -548,3 +575,7 @@ header.scrolled .nav-left img { width: 46px; height: 46px; }
   .helmet-bubbles, .helmet-wrap::before { display: none; }
 }
 #welcome:focus { outline: none; }
+@media (max-width: 500px) {
+  .foot { grid-template-columns: 1fr; gap: 28px; }
+  .foot-menu { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+}
