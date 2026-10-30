@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Southeast Diving Services</title>
+  <meta name="description" content="Southeast Diving Services: professional commercial and marine diving.">
+  <style>
+    :root {
+      --navy: #0b2540;
+      --deep: #0f3a5f;
+      --sea: #1f7a99;
+      --foam: #e8f3f7;
+      --sand: #f6f1e7;
+      --text: #1d2a35;
+      --muted: #5b6b78;
+      --accent: #f2a541;
+      --max: 1100px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.6;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: var(--sea); }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: var(--navy);
+      color: #fff;
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 20px; }
+    .brand { font-weight: 700; font-size: 1.1rem; letter-spacing: .02em; color: #fff; text-decoration: none; }
+    .nav ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; }
+    .nav a.link { color: #cfe3ee; text-decoration: none; font-size: .95rem; }
+    .nav a.link:hover { color: #fff; }
+
+    /* Hero: swap the background for a photo by adding
+       url("images/your-photo.jpg") center/cover to the background list */
+    .hero {
+      background:
+        linear-gradient(180deg, rgba(11,37,64,.55), rgba(11,37,64,.85)),
+        radial-gradient(ellipse at 30% 0%, #3aa6c4 0%, transparent 60%),
+        linear-gradient(180deg, var(--sea), var(--navy));
+      color: #fff;
+      padding: 110px 0 120px;
+      text-align: center;
+    }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.15; margin: 0 0 16px; }
+    .hero p { font-size: clamp(1.05rem, 2.2vw, 1.25rem); max-width: 640px; margin: 0 auto 32px; color: #dbeaf2; }
+    .btn {
+      display: inline-block; padding: 14px 28px; border-radius: 6px;
+      background: var(--accent); color: var(--navy); font-weight: 700; text-decoration: none;
+    }
+    .btn:hover { filter: brightness(1.05); }
+    .btn.ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.7); margin-left: 10px; }
+
+    section { padding: 80px 0; }
+    h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); margin: 0 0 12px; color: var(--navy); }
+    .lead { color: var(--muted); max-width: 680px; margin: 0 0 40px; }
+
+    /* Services */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; }
+    .card {
+      background: var(--foam); border-radius: 10px; padding: 26px;
+      border-top: 4px solid var(--sea);
+    }
+    .card h3 { margin: 0 0 8px; color: var(--deep); font-size: 1.15rem; }
+    .card p { margin: 0; color: var(--muted); }
+
+    /* About */
+    .about { background: var(--sand); }
+    .about .cols { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
+    .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .stat { background: #fff; border-radius: 10px; padding: 22px; text-align: center; }
+    .stat b { display: block; font-size: 1.8rem; color: var(--sea); }
+    .stat span { color: var(--muted); font-size: .9rem; }
+
+    /* Contact */
+    .contact { background: var(--navy); color: #fff; }
+    .contact h2 { color: #fff; }
+    .contact .lead { color: #b9d0de; }
+    .contact-list { list-style: none; padding: 0; margin: 0 0 32px; display: grid; gap: 10px; font-size: 1.1rem; }
+    .contact-list a { color: #fff; }
+
+    footer { background: #071a2d; color: #8aa5b8; text-align: center; padding: 24px 20px; font-size: .9rem; }
+
+    @media (max-width: 760px) {
+      .nav ul { display: none; }
+      .about .cols { grid-template-columns: 1fr; }
+      .hero { padding: 80px 0 90px; }
+      .btn.ghost { margin: 12px 0 0; }
+      section { padding: 60px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="nav wrap">
+      <a class="brand" href="#">Southeast Diving Services</a>
+      <ul>
+        <li><a class="link" href="#services">Services</a></li>
+        <li><a class="link" href="#about">About</a></li>
+        <li><a class="link" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <h1>Professional Diving Services<br>Across the Southeast</h1>
+        <p>Safe, reliable underwater work for marinas, boat owners, contractors, and municipalities.</p>
+        <a class="btn" href="#contact">Request a Quote</a>
+        <a class="btn ghost" href="#services">Our Services</a>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <h2>Services</h2>
+        <p class="lead">Placeholder list. Tell us what you actually offer and we'll update these.</p>
+        <div class="grid">
+          <div class="card">
+            <h3>Hull Cleaning</h3>
+            <p>Regular in-water cleaning to keep boats running efficiently.</p>
+          </div>
+          <div class="card">
+            <h3>Underwater Inspection</h3>
+            <p>Hulls, docks, pilings, and seawalls, with photo and video reports.</p>
+          </div>
+          <div class="card">
+            <h3>Repairs &amp; Maintenance</h3>
+            <p>Zinc replacement, running gear, props, and minor underwater repairs.</p>
+          </div>
+          <div class="card">
+            <h3>Recovery &amp; Salvage</h3>
+            <p>Lost item recovery and salvage support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="wrap cols">
+        <div>
+          <h2>About Us</h2>
+          <p>Southeast Diving Services provides professional underwater services throughout the region. <em>Add your story here: how long you've been diving, certifications, the areas you cover, and what sets you apart.</em></p>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>—</b><span>Years experience</span></div>
+          <div class="stat"><b>—</b><span>Jobs completed</span></div>
+          <div class="stat"><b>—</b><span>Certified divers</span></div>
+          <div class="stat"><b>—</b><span>Service area</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="wrap">
+        <h2>Contact</h2>
+        <p class="lead">Get in touch for a quote or to schedule service.</p>
+        <ul class="contact-list">
+          <li>Phone: <em>(000) 000-0000</em></li>
+          <li>Email: <em>info@example.com</em></li>
+          <li>Area: <em>City, State</em></li>
+        </ul>
+        <a class="btn" href="mailto:info@example.com">Email Us</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; <span id="year">2026</span> Southeast Diving Services
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
