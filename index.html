@@ -3,185 +3,374 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Southeast Diving Services</title>
-  <meta name="description" content="Southeast Diving Services: professional commercial and marine diving.">
+  <title>Southeast Diving Services | Underwater Problem Solvers</title>
+  <meta name="description" content="Southeast Diving Services (S.E.D.): underwater boat and yacht maintenance, hard hat diving, port services, and hauling in Miami-Dade, Broward, and the Palm Beaches. Call 24/7 (954) 650-6931.">
+  <link rel="icon" href="images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --navy: #0b2540;
-      --deep: #0f3a5f;
-      --sea: #1f7a99;
-      --foam: #e8f3f7;
-      --sand: #f6f1e7;
-      --text: #1d2a35;
-      --muted: #5b6b78;
-      --accent: #f2a541;
-      --max: 1100px;
+      --yellow: #fdf100;
+      --black: #000;
+      --charcoal: #3e3e3e;
+      --white: #fff;
+      --max: 1290px;
+      --stripe: 12px;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: var(--text);
-      background: #fff;
-      line-height: 1.6;
+      font-family: "Poppins", system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--white);
+      background: var(--black);
     }
     img { max-width: 100%; display: block; }
-    a { color: var(--sea); }
-    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+    a { color: inherit; }
+    h1, h2, h3 { margin: 0; line-height: 1.1; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    .stripe { border-top: var(--stripe) solid var(--yellow); }
+
+    .btn {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--black);
+      font-weight: 900;
+      font-size: 1.05rem;
+      padding: 8px 20px;
+      text-decoration: none;
+      border: 0;
+      cursor: pointer;
+      font-family: inherit;
+      transition: transform .15s, box-shadow .15s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,.35); }
 
     /* Header */
-    header {
-      position: sticky; top: 0; z-index: 10;
-      background: var(--navy);
-      color: #fff;
-    }
-    .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 20px; }
-    .brand { font-weight: 700; font-size: 1.1rem; letter-spacing: .02em; color: #fff; text-decoration: none; }
-    .nav ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; }
-    .nav a.link { color: #cfe3ee; text-decoration: none; font-size: .95rem; }
-    .nav a.link:hover { color: #fff; }
+    header { position: sticky; top: 0; z-index: 20; background: var(--yellow); color: var(--black); }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 72px; }
+    .nav-left { display: flex; align-items: center; gap: 14px; }
+    .nav-left img { width: 64px; height: 64px; }
+    .call { font-weight: 800; font-size: 1.15rem; text-decoration: none; white-space: nowrap; }
+    .call span { margin-left: 8px; }
+    .menu { list-style: none; display: flex; gap: 26px; margin: 0; padding: 0; }
+    .menu a { text-decoration: none; font-weight: 700; font-size: .82rem; text-transform: uppercase; }
+    .menu a:hover { text-decoration: underline; text-underline-offset: 4px; }
+    .menu-toggle { display: none; background: none; border: 2px solid var(--black); padding: 6px 12px; font: 700 .85rem "Poppins", sans-serif; text-transform: uppercase; cursor: pointer; }
 
-    /* Hero: swap the background for a photo by adding
-       url("images/your-photo.jpg") center/cover to the background list */
+    /* Hero */
     .hero {
-      background:
-        linear-gradient(180deg, rgba(11,37,64,.55), rgba(11,37,64,.85)),
-        radial-gradient(ellipse at 30% 0%, #3aa6c4 0%, transparent 60%),
-        linear-gradient(180deg, var(--sea), var(--navy));
-      color: #fff;
-      padding: 110px 0 120px;
+      position: relative;
+      min-height: calc(100vh - 72px);
+      min-height: calc(100svh - 72px);
+      display: grid;
+      place-items: center;
       text-align: center;
+      overflow: hidden;
+      background: #0d3b44 url("images/hero-poster.jpg") center/cover;
     }
-    .hero h1 { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.15; margin: 0 0 16px; }
-    .hero p { font-size: clamp(1.05rem, 2.2vw, 1.25rem); max-width: 640px; margin: 0 auto 32px; color: #dbeaf2; }
-    .btn {
-      display: inline-block; padding: 14px 28px; border-radius: 6px;
-      background: var(--accent); color: var(--navy); font-weight: 700; text-decoration: none;
-    }
-    .btn:hover { filter: brightness(1.05); }
-    .btn.ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.7); margin-left: 10px; }
+    .hero video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .hero::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,.18); }
+    .hero-inner { position: relative; z-index: 1; padding: 40px 24px; }
+    .hero-inner img { width: 190px; margin: 0 auto 18px; }
+    .hero h1 { font-size: clamp(2rem, 4.5vw, 2.6rem); font-weight: 900; text-shadow: 0 2px 12px rgba(0,0,0,.45); }
 
-    section { padding: 80px 0; }
-    h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); margin: 0 0 12px; color: var(--navy); }
-    .lead { color: var(--muted); max-width: 680px; margin: 0 0 40px; }
+    /* Welcome */
+    .welcome { padding: 50px 0 30px; }
+    .welcome-grid { display: grid; grid-template-columns: 1.7fr 1fr; gap: 50px; align-items: start; }
+    .welcome h2, .contact h2, .team h2 { color: var(--yellow); font-size: clamp(2rem, 4.2vw, 3.1rem); font-weight: 800; margin-bottom: 26px; }
+    .welcome p { margin: 0 0 22px; }
+    .welcome .cta { text-align: center; margin-top: 30px; }
+    .welcome-grid img { width: 100%; max-width: 310px; height: auto; margin: -10px auto 0; }
 
-    /* Services */
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; }
+    /* Service cards */
+    .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; padding: 18px 0 24px; }
     .card {
-      background: var(--foam); border-radius: 10px; padding: 26px;
-      border-top: 4px solid var(--sea);
+      position: relative;
+      aspect-ratio: 305 / 262;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 16px;
+      padding: 0 12px 16px;
+      text-align: center;
+      overflow: hidden;
     }
-    .card h3 { margin: 0 0 8px; color: var(--deep); font-size: 1.15rem; }
-    .card p { margin: 0; color: var(--muted); }
+    .card::before { content: ""; position: absolute; inset: 0; background: rgba(10,30,60,.35); transition: background .2s; }
+    .card:hover::before { background: rgba(10,30,60,.15); }
+    .card h3, .card .btn { position: relative; }
+    .card h3 { font-size: 1.25rem; font-weight: 900; text-shadow: 0 2px 8px rgba(0,0,0,.6); }
+    .card .btn { font-size: .85rem; padding: 8px 20px; }
 
-    /* About */
-    .about { background: var(--sand); }
-    .about .cols { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
-    .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-    .stat { background: #fff; border-radius: 10px; padding: 22px; text-align: center; }
-    .stat b { display: block; font-size: 1.8rem; color: var(--sea); }
-    .stat span { color: var(--muted); font-size: .9rem; }
+    /* Diver band */
+    .band { height: clamp(260px, 38vw, 440px); background: url("images/diver-band.jpg") center/cover; }
+
+    /* Trust badges */
+    .badges { background: var(--white); color: var(--black); padding: 36px 0 90px; }
+    .badge-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; text-align: center; }
+    .badge img.photo { width: 100%; max-width: 308px; aspect-ratio: 308 / 431; object-fit: cover; margin: 0 auto; }
+    .badge img.check { width: 136px; height: 136px; margin: -26px auto 26px; position: relative; }
+    .badge h3 { font-size: 1.15rem; font-weight: 900; }
 
     /* Contact */
-    .contact { background: var(--navy); color: #fff; }
-    .contact h2 { color: #fff; }
-    .contact .lead { color: #b9d0de; }
-    .contact-list { list-style: none; padding: 0; margin: 0 0 32px; display: grid; gap: 10px; font-size: 1.1rem; }
-    .contact-list a { color: #fff; }
+    .contact { padding: 70px 0 54px; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start; }
+    .contact p strong { color: var(--yellow); }
+    .contact .anytime { font-size: 1.2rem; font-weight: 500; margin: 26px 0 6px; }
+    .contact .big-phone { font-size: 2rem; font-weight: 900; text-decoration: none; }
+    form { background: var(--charcoal); padding: 20px 16px 12px; }
+    form label { display: block; font-weight: 500; margin: 0 0 4px; }
+    form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    form .field { margin-bottom: 14px; }
+    form small { color: #ddd; }
+    input, textarea {
+      width: 100%;
+      font: inherit;
+      color: var(--white);
+      background: var(--charcoal);
+      border: 1px solid #bbb;
+      padding: 8px 10px;
+    }
+    input:focus, textarea:focus { outline: 2px solid var(--yellow); outline-offset: 1px; }
+    textarea { min-height: 170px; resize: vertical; }
+    form button { background: var(--black); color: var(--white); font: 500 1rem "Poppins", sans-serif; padding: 10px 20px; border: 0; cursor: pointer; }
+    form button:hover { background: var(--yellow); color: var(--black); }
 
-    footer { background: #071a2d; color: #8aa5b8; text-align: center; padding: 24px 20px; font-size: .9rem; }
+    /* Mega Shippers */
+    .mega { min-height: clamp(380px, 46vw, 640px); background: url("images/mega-shippers.jpg") center top/cover; padding: 24px 0; }
+    .mega-box { background: var(--black); max-width: 426px; padding: 34px 16px 36px; }
+    .mega-box img { width: 207px; margin-bottom: 26px; }
+    .mega-box p { margin: 0 0 24px; font-size: 1.05rem; }
 
+    /* Team */
+    .team { background: linear-gradient(180deg, rgba(0,0,0,0) 55%, #000 100%), url("images/rays.jpg") center top/cover; padding: 76px 0 150px; }
+    .team-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: start; }
+    .team-grid > img { width: 140px; margin: 0 auto; }
+    .team p { margin: 0 0 22px; }
+    .team b { color: var(--yellow); }
+    .team .cta { text-align: center; }
+
+    /* Footer */
+    footer { background: linear-gradient(180deg, #000 0%, rgba(0,0,0,0) 30%), url("images/ocean-bottom.jpg") center/cover; padding: 30px 0 50px; }
+    .foot { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; align-items: center; }
+    .foot .call { color: var(--white); font-size: 1.9rem; font-weight: 800; display: block; margin-bottom: 18px; }
+    .foot address, .foot .hours { font-style: normal; color: var(--yellow); margin: 0 0 20px; line-height: 1.5; }
+    .foot .menu a { color: var(--white); font-size: .78rem; }
+    .foot .menu a.current { color: var(--yellow); }
+    .foot .menu { gap: 12px; }
+    .foot > img { width: 126px; }
+    .copy { text-align: center; color: #9ab; font-size: .8rem; margin-top: 30px; }
+
+    @media (prefers-reduced-motion: reduce) { .hero video { display: none; } }
+
+    @media (max-width: 1000px) {
+      .cards { grid-template-columns: repeat(2, 1fr); }
+      .welcome-grid { grid-template-columns: 1fr; }
+      .welcome-grid img { max-width: 240px; margin: 0 auto; }
+    }
     @media (max-width: 760px) {
-      .nav ul { display: none; }
-      .about .cols { grid-template-columns: 1fr; }
-      .hero { padding: 80px 0 90px; }
-      .btn.ghost { margin: 12px 0 0; }
-      section { padding: 60px 0; }
+      .menu-toggle { display: block; }
+      header .menu { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0; background: var(--yellow); border-top: 1px solid rgba(0,0,0,.2); }
+      header .menu.open { display: flex; }
+      header .menu a { display: block; padding: 14px 24px; font-size: .95rem; }
+      .nav-left img { width: 48px; height: 48px; }
+      .call { font-size: .95rem; }
+      .call span { margin-left: 4px; }
+      .cards, .badge-grid, .contact-grid, .team-grid, .foot { grid-template-columns: 1fr; }
+      .badges { padding-bottom: 50px; }
+      .team-grid > img { width: 90px; }
+      .foot > div { min-width: 0; }
+      .foot .call { font-size: 1.35rem; }
+      .mega { background-position: 65% top; }
+      form .row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 400px) {
+      .call .label { display: none; }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <nav class="nav wrap">
-      <a class="brand" href="#">Southeast Diving Services</a>
-      <ul>
-        <li><a class="link" href="#services">Services</a></li>
-        <li><a class="link" href="#about">About</a></li>
-        <li><a class="link" href="#contact">Contact</a></li>
+    <nav class="nav wrap" aria-label="Main">
+      <div class="nav-left">
+        <a href="#top"><img src="images/logo.png" alt="North &amp; Southeast Diving logo"></a>
+        <a class="call" href="tel:+19546506931"><span class="label">CALL 24/7</span><span>(954) 650-6931</span></a>
+      </div>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+      <ul class="menu" id="menu">
+        <li><a href="#top">Home</a></li>
+        <li><a href="#team">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact Us</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
+  <main id="top">
     <section class="hero">
-      <div class="wrap">
-        <h1>Professional Diving Services<br>Across the Southeast</h1>
-        <p>Safe, reliable underwater work for marinas, boat owners, contractors, and municipalities.</p>
-        <a class="btn" href="#contact">Request a Quote</a>
-        <a class="btn ghost" href="#services">Our Services</a>
+      <video autoplay muted loop playsinline preload="metadata" poster="images/hero-poster.jpg" aria-hidden="true">
+        <source src="video/hero-waves.mp4" type="video/mp4">
+      </video>
+      <div class="hero-inner">
+        <img src="images/logo.png" alt="North &amp; Southeast Diving">
+        <h1>Underwater Problem Solvers</h1>
       </div>
     </section>
 
-    <section id="services">
+    <section class="welcome stripe">
       <div class="wrap">
-        <h2>Services</h2>
-        <p class="lead">Placeholder list. Tell us what you actually offer and we'll update these.</p>
-        <div class="grid">
-          <div class="card">
-            <h3>Hull Cleaning</h3>
-            <p>Regular in-water cleaning to keep boats running efficiently.</p>
+        <div class="welcome-grid">
+          <div>
+            <h2>Welcome to Southeast Diving Services: S.E.D.</h2>
+            <p>We provide top notch, personalized dive services at competitive rates.</p>
+            <p>If you are located in Dade, Broward or the Palm Beaches and are looking for superior underwater vessel maintenance, you couldn’t have come to a better place!</p>
+            <p>Southeast Diving (S.E.D.) provides fast and thorough underwater boat and yacht maintenance at budget-friendly rates. We provide unmatched personalized services and truly seek to understand and address all of your underwater vessel cleaning and maintenance concerns.</p>
+            <p>Our 30+ years of experience and solid commitment to total customer satisfaction has consistently allowed us to operate in a league of our own.</p>
+            <p>No other Dive Company comes close to the advantages you receive with S.E.D. (Southeast Diving).</p>
+            <div class="cta"><a class="btn" href="#contact">Work with Southeast Diving</a></div>
           </div>
-          <div class="card">
-            <h3>Underwater Inspection</h3>
-            <p>Hulls, docks, pilings, and seawalls, with photo and video reports.</p>
+          <img src="images/helmet.webp" alt="Yellow commercial diving helmet" width="700" height="770">
+        </div>
+
+        <div class="cards" id="services">
+          <div class="card" style="background-image:url('images/hard-hat-diving.jpg')">
+            <h3>Hard Hat Diving</h3>
+            <a class="btn" href="#contact">Learn More</a>
           </div>
-          <div class="card">
-            <h3>Repairs &amp; Maintenance</h3>
-            <p>Zinc replacement, running gear, props, and minor underwater repairs.</p>
+          <div class="card" style="background-image:url('images/port-services.jpg')">
+            <h3>Port Services</h3>
+            <a class="btn" href="#contact">Learn More</a>
           </div>
-          <div class="card">
-            <h3>Recovery &amp; Salvage</h3>
-            <p>Lost item recovery and salvage support.</p>
+          <div class="card" style="background-image:url('images/vessel-maintenance.jpg')">
+            <h3>Underwater Vessel Maintenance</h3>
+            <a class="btn" href="#contact">Learn More</a>
+          </div>
+          <div class="card" style="background-image:url('images/hauling-lifting.jpg')">
+            <h3>Hauling &amp; Lifting Services</h3>
+            <a class="btn" href="#contact">Learn More</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="about" class="about">
-      <div class="wrap cols">
+    <div class="band stripe" role="img" aria-label="Hard hat diver working underwater"></div>
+
+    <section class="badges stripe">
+      <div class="wrap badge-grid">
+        <div class="badge">
+          <img class="photo" src="images/port-contractor.jpg" alt="Dive crew boarding a ship" loading="lazy">
+          <img class="check" src="images/check.svg" alt="">
+          <h3>Certified Port Contractor</h3>
+        </div>
+        <div class="badge">
+          <img class="photo" src="images/team.jpg" alt="Southeast Diving crew at the port" loading="lazy">
+          <img class="check" src="images/check.svg" alt="">
+          <h3>Honest, Reliable, Affordable</h3>
+        </div>
+        <div class="badge">
+          <img class="photo" src="images/truck.jpg" alt="Southeast Diving truck" loading="lazy">
+          <img class="check" src="images/check.svg" alt="">
+          <h3>Licensed and Insured</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap contact-grid">
         <div>
-          <h2>About Us</h2>
-          <p>Southeast Diving Services provides professional underwater services throughout the region. <em>Add your story here: how long you've been diving, certifications, the areas you cover, and what sets you apart.</em></p>
+          <h2>Get Started with Southeast Diving Services</h2>
+          <p>Day or night. Dockside or offshore. Our commercial dive team is available 24/7/365 for underwater boat cleaning, hull maintenance, propeller inspections, zinc replacement, and emergency dive services throughout <strong>Miami-Dade</strong>, <strong>Broward</strong> County, and the <strong>Palm Beaches</strong>.</p>
+          <p class="anytime">CALL US ANYTIME, 24/7</p>
+          <a class="big-phone" href="tel:+19546506931">(954) 650-6931</a>
         </div>
-        <div class="stats">
-          <div class="stat"><b>—</b><span>Years experience</span></div>
-          <div class="stat"><b>—</b><span>Jobs completed</span></div>
-          <div class="stat"><b>—</b><span>Certified divers</span></div>
-          <div class="stat"><b>—</b><span>Service area</span></div>
+        <!-- GitHub Pages can't process forms, so this opens the visitor's email app.
+             Swap the action for a form service (Formspree, Netlify Forms, etc.) to receive submissions directly. -->
+        <form action="mailto:southeastdiving@gmail.com" method="post" enctype="text/plain">
+          <div class="field">
+            <label>Name *</label>
+            <div class="row">
+              <div><input name="first" required autocomplete="given-name" aria-label="First name"><small>First</small></div>
+              <div><input name="last" required autocomplete="family-name" aria-label="Last name"><small>Last</small></div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="email">Email *</label>
+            <input id="email" name="email" type="email" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="mega stripe">
+      <div class="wrap">
+        <div class="mega-box">
+          <img src="images/discovery.png" alt="Discovery Channel">
+          <p>Check out Southeast Diving on Mega Shippers!</p>
+          <!-- TODO: link to the Mega Shippers episode -->
+          <a class="btn" href="#">Click Here to Watch</a>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="contact">
-      <div class="wrap">
-        <h2>Contact</h2>
-        <p class="lead">Get in touch for a quote or to schedule service.</p>
-        <ul class="contact-list">
-          <li>Phone: <em>(000) 000-0000</em></li>
-          <li>Email: <em>info@example.com</em></li>
-          <li>Area: <em>City, State</em></li>
-        </ul>
-        <a class="btn" href="mailto:info@example.com">Email Us</a>
+    <section class="team" id="team">
+      <div class="wrap team-grid">
+        <img src="images/trident.png" alt="" loading="lazy">
+        <div>
+          <h2>Meet Our Team</h2>
+          <p>Serving boat and yacht owners in Florida’s Tri-county area which includes Dade County, Broward County and the Palm Beaches, there’s no need to look anywhere else to get underwater boat cleaning and maintenance services that deliver superior results.</p>
+          <p>If you’d like to learn more about how we can help with your vessel’s monthly underwater cleaning, zinc changes, propeller replacement, or other maintenance services, please contact us:</p>
+          <p><b>Phone:</b> <a href="tel:+19546506931">(954) 650-6931</a><br>
+             <b>Email:</b> <a href="mailto:southeastdiving@gmail.com">southeastdiving@gmail.com</a></p>
+          <p>At S.E.D. (Southeast Diving), your vessel’s underwater maintenance is always in capable hands.</p>
+          <div class="cta"><a class="btn" href="#contact">Contact Us</a></div>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
-    &copy; <span id="year">2026</span> Southeast Diving Services
+    <div class="wrap">
+      <div class="foot">
+        <div>
+          <a class="call" href="tel:+19546506931">CALL 24/7 (954) 650-6931</a>
+          <address>2601 SW 31st St.<br>Unit #301<br>Fort Lauderdale, FL 33312</address>
+          <p class="hours">Mon - Fri, 9am - 3pm</p>
+          <ul class="menu">
+            <li><a class="current" href="#top">Home</a></li>
+            <li><a href="#team">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <img src="images/logo.png" alt="North &amp; Southeast Diving logo" loading="lazy">
+      </div>
+      <p class="copy">&copy; <span id="year">2026</span> Southeast Diving Services</p>
+    </div>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.getElementById('menu');
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    menu.addEventListener('click', e => {
+      if (e.target.tagName === 'A') { menu.classList.remove('open'); toggle.setAttribute('aria-expanded', false); }
+    });
+  </script>
 </body>
 </html>
